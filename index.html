@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Load polyfills. Same as 2.x, except for the path -->
+    <script
+        src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js">
+    </script>
+
+    <!-- Import the my-app element's module. -->
+    <script type="module" src="progress-bar.js"></script>
+  </head>
+  <body>
+    <h2>Random value</h2>
+    <progress-bar value="0.3" id="random"></progress-bar>
+    <h2>Indeterminate</h2>
+    <progress-bar indeterminate></progress-bar>
+    <script>
+      setInterval(() => {
+        document.querySelector('#random').value = Math.random();
+      }, 400);
+    </script>
+  </body>
+</html>
